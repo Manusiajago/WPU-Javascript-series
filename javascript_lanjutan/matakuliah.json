@@ -1,0 +1,20 @@
+{
+    "matakuliah": [
+      {
+        "nama": "Pemrograman Web",
+        "dosen": "Dr. Ahmad",
+        "sks": 3
+      },
+      {
+        "nama": "Basis Data",
+        "dosen": "Prof. Budi",
+        "sks": 4
+      },
+      {
+        "nama": "Algoritma dan Struktur Data",
+        "dosen": "Dr. Siti",
+        "sks": 3
+      }
+    ]
+  }
+  

@@ -1,0 +1,35 @@
+{
+    "mahasiswa": [
+      {
+        "id": 1,
+        "nama": "Andi",
+        "jurusan": "Teknik Informatika",
+        "angkatan": 2020
+      },
+      {
+        "id": 2,
+        "nama": "Budi",
+        "jurusan": "Sistem Informasi",
+        "angkatan": 2019
+      },
+      {
+        "id": 3,
+        "nama": "Citra",
+        "jurusan": "Teknik Elektro",
+        "angkatan": 2021
+      },
+      {
+        "id": 4,
+        "nama": "Dewi",
+        "jurusan": "Matematika",
+        "angkatan": 2020
+      },
+      {
+        "id": 5,
+        "nama": "Eko",
+        "jurusan": "Fisika",
+        "angkatan": 2018
+      }
+    ]
+  }
+  
