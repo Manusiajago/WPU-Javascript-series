@@ -1,0 +1,50 @@
+{
+    "pegawai": [
+      {
+        "id": 1,
+        "nama": "Andi Wijaya",
+        "jabatan": "Software Engineer",
+        "gaji": 10000000,
+        "umur": 29,
+        "alamat": "Jl. Merdeka No. 10, Jakarta",
+        "email": "andi.wijaya@example.com"
+      },
+      {
+        "id": 2,
+        "nama": "Budi Santoso",
+        "jabatan": "Data Analyst",
+        "gaji": 8500000,
+        "umur": 27,
+        "alamat": "Jl. Sudirman No. 20, Bandung",
+        "email": "budi.santoso@example.com"
+      },
+      {
+        "id": 3,
+        "nama": "Citra Dewi",
+        "jabatan": "Project Manager",
+        "gaji": 15000000,
+        "umur": 35,
+        "alamat": "Jl. Gatot Subroto No. 5, Surabaya",
+        "email": "citra.dewi@example.com"
+      },
+      {
+        "id": 4,
+        "nama": "Dedi Pratama",
+        "jabatan": "UX Designer",
+        "gaji": 9500000,
+        "umur": 30,
+        "alamat": "Jl. Ahmad Yani No. 8, Yogyakarta",
+        "email": "dedi.pratama@example.com"
+      },
+      {
+        "id": 5,
+        "nama": "Erika Lestari",
+        "jabatan": "Marketing Specialist",
+        "gaji": 7500000,
+        "umur": 25,
+        "alamat": "Jl. Kebon Jeruk No. 15, Jakarta",
+        "email": "erika.lestari@example.com"
+      }
+    ]
+  }
+  
