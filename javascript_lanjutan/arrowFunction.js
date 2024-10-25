@@ -174,3 +174,5 @@ console.log("Harga yang lebih dari 30000 : ", filterBarang);
 
 
 
+
+
