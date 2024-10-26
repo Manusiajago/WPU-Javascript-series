@@ -220,6 +220,180 @@ console.log(rataRata1)
 console.log(rataRata2)
 
 //Studi Kasus 3: Pengiriman Email Pemberitahuan Berdasarkan Kriteria Pengguna
+// hint : Misalkan kita memiliki aplikasi yang mengirimkan email kepada pengguna berdasarkan beberapa kriteria, seperti pengguna yang aktif dalam seminggu terakhir atau pengguna dengan pembelian lebih dari jumlah tertentu.
+const pengguna = [
+    { nama: "Egal", pembelian: 500000, aktif: true },
+    { nama: "Sita", pembelian: 200000, aktif: false },
+    { nama: "Rafi", pembelian: 750000, aktif: true },
+    { nama: "Mira", pembelian: 100000, aktif: true }
+];
+
+// higher order function yang menerima fungsi diskon sebagai parameter
+const hitungHargaDiskon = ((harga, fungsiDiskon) => {
+    return harga - fungsiDiskon(harga)
+})
+
+// diskon presentase 10%
+const diskonPresentase = ((harga) => {
+    return harga * 0.1;
+})
+
+// diskon flat potongan langsung 50k
+const diskonFlat = ((harga) => {
+    return 50000;
+})
+
+
+// menghitung harga dengan berbagai jenis diskon
+const hargaAsli = 50000;
+console.log("Harga setelah diskon presentase : ", hitungHargaDiskon(hargaAsli, diskonPresentase));
+console.log("Harga setelah diskon flat : ", hitungHargaDiskon(hargaAsli, diskonFlat));
+
+
+// mencari angka yg lebih dari 5
+const angkaAngka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+// fungsi untuk mencari angka lebih dari 5
+let result = [];
+for (let i = 0; i < angkaAngka.length; i++) {
+    if (angkaAngka[i] > 5) {
+        result.push(angkaAngka[i]);
+    }
+
+
+
+}
+
+
+console.log(result);
+
+// contoh implementasi reduce() prototype array 
+const barangCheckoutSaya = [{ nama: "Baju", harga: 45000, total: 2 },
+{ nama: "celana", harga: 50000, total: 4 },
+{ nama: "topi", harga: 80000, total: 3 },
+{ nama: "sarung tangan", harga: 25000, total: 1 }
+];
+
+//menggunakan reduce untuk menghitung total barang kita
+const totalHarga = barangCheckoutSaya.reduce((total, item) => {
+    return total + (item.harga * item.total);
+}, 0)
+
+console.log("Total harga belanja : ", totalHarga);
+
+//menghitung total gaji karyawan
+
+const karyawan = [{ nama: "Andi", gaji: 5000000 },
+{ nama: "Budi", gaji: 7000000 },
+{ nama: "Citra", gaji: 4500000 },
+{ nama: "Dina", gaji: 6000000 }];
+
+//menggunakan reduce untuk menghitung total gaji
+const totalGaji = karyawan.reduce((total, item) => {
+    return total + item.gaji;
+}, 0)
+
+console.log("Total Gaji : ", totalGaji);
+
+
+// mengelompokkan item berdasarkan kategori 
+const inventaris = [
+    { nama: "Laptop", kategori: "Elektronik" },
+    { nama: "Monitor", kategori: "Elektronik" },
+    { nama: "Meja", kategori: "Furniture" },
+    { nama: "Kursi", kategori: "Furniture" },
+    { nama: "Keyboard", kategori: "Elektronik" }
+];
+
+// menggunakan reduce untuk mengelompokkan sesuai dengan kategori
+const res = inventaris.reduce((acc, item) => {
+    const index = item.kategori;
+
+    if (!acc[index]) {
+        acc[index] = [];
+    }
+
+    acc[index].push(item.nama);
+    return acc;
+
+}, {})
+
+console.log(res);
+
+// menghitung rataRata nilai siswa
+const nilaiSiswa = [
+    { nama: "Eka", nilai: 85 },
+    { nama: "Fikri", nilai: 78 },
+    { nama: "Gina", nilai: 92 },
+    { nama: "Hana", nilai: 88 }
+];
+
+//menghitng rata rata nilai siswa menggunakan reduce()
+
+const average = nilaiSiswa.reduce((function (sum, value) {
+    return sum + value.nilai;
+}), 0) / nilaiSiswa.length;
+
+console.log("Rata-rata nilai siswa : ", average);
+
+
+//menghitung jumlah kata pada kalimat
+const kalimat = ["Selamat", "belajar", "menggunakan", "reduce", "di", "JavaScript"];
+
+const totalKata = kalimat.reduce((total) => {
+    return total + 1;
+}, 0)
+
+console.log("Jumlah kata dalam kalimat : ", totalKata);
+
+// buatkan nilai di dalam array ini dengan angka yg lebih banyak
+const nilai = [65, 80, 95, 70, 90, 90, 90, 90, 90, 90, 90, 90, 90, 80, 10, 20, 40];
+
+function getMax(arr) {
+    let len = arr.length, max = -Infinity;
+
+    while (len--) {
+        if (arr[len] > max) {
+            max = arr[len];
+        }
+    }
+
+    return max;
+}
+
+console.log("Nilai tertinggi adalah : ", getMax(nilai))
+
+// map () 
+
+
+const siswa = [
+    { nama: "Andi", nilaiUjian: [80, 75, 90] },
+    { nama: "Budi", nilaiUjian: [60, 65, 70] },
+    { nama: "Cici", nilaiUjian: [90, 95, 85] },
+    { nama: "Dedi", nilaiUjian: [55, 60, 58] }
+];
+
+//menggunakan map untuk menghitung rata rata  dan menentukan status kelulusan
+const hasilUjian = siswa.map((item) => {
+
+
+    const totalNilai = item.nilaiUjian.reduce((total, nilai) => {
+        return total + nilai;
+
+    }, 0) / item.nilaiUjian.length
+
+    //menentukan status kelulusan dengan standar nilai 
+    const result = totalNilai >= 75 ? "Lulus" : "Tidak lulus";
+
+    return {
+        nama: item.nama,
+        rataRata: totalNilai.toFixed(2),
+        status: result
+    };
+})
+
+
+console.log("Hasil Ujian siswa sd 01", hasilUjian);
 
 
 
