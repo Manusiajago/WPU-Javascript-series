@@ -396,4 +396,101 @@ const hasilUjian = siswa.map((item) => {
 console.log("Hasil Ujian siswa sd 01", hasilUjian);
 
 
+// Misalkan Anda memiliki data produk, dan Anda ingin menambahkan simbol mata uang di depan harga setiap produk serta menghitung harga diskon.
+
+const daftarBarang = [
+    { nama: "Laptop", harga: 15000000 },
+    { nama: "Monitor", harga: 3000000 },
+    { nama: "Mouse", harga: 150000 },
+    { nama: "Keyboard", harga: 500000 }
+];
+
+
+const barangDenganDiskon = daftarBarang.map((item) => {
+    return {
+        nama: item.nama,
+        hargaAsli: ` ${item.harga}`,
+        hargaDiskon: `${item.harga * 0.9}`
+    }
+
+})
+
+console.log("Barang dengan diskon : ", barangDenganDiskon);
+
+const uppercaseProduk = daftarBarang.map((target) => {
+    return {
+        nama: target.nama.toUpperCase(),
+        harga: target.harga
+    }
+})
+
+console.table(uppercaseProduk)
+
+// menggunakan filter untuk mencari buku yg tersedia
+const buku = [
+    { judul: "Pemrograman JavaScript", penulis: "Egal Assegaf", kategori: "Teknologi", tersedia: true },
+    { judul: "Data Science untuk Pemula", penulis: "Andi Saputra", kategori: "Data", tersedia: false },
+    { judul: "Panduan CSS", penulis: "Rina Wijaya", kategori: "Teknologi", tersedia: true },
+    { judul: "Psikologi Remaja", penulis: "Siti Aminah", kategori: "Psikologi", tersedia: true },
+    { judul: "Belajar React.js", penulis: "Ahmad Fauzan", kategori: "Teknologi", tersedia: false }
+];
+
+
+const bukuTersedia = buku.filter((target) => {
+    return target.tersedia;
+})
+
+console.table(bukuTersedia);
+
+
+// conversi daftar siswa ke format rapor
+const daftarSiswa = [{
+    nama: "Egal Assegaf",
+    nilai: 70
+},
+{ nama: "Rina", nilai: 92 },
+{ nama: "Budi", nilai: 74 },
+{ nama: "Dina", nilai: 88 },
+{ nama: "Cici", nilai: 79 },
+{ nama: "diana", nilai: 70 },
+{ nama: "tyas", nilai: 69 },
+{ nama: "lika", nilai: 60 },
+{ nama: "lili", nilai: 50 },
+{ nama: "yuni", nilai: 41 },
+{ nama: "Cici", nilai: 20 }
+]
+
+function gradingScore(score) {
+    var gscore;
+
+    switch (true) {
+        case (score <= 100 && score >= 90):
+            gscore = 'A';
+            break;
+        case (score >= 89 && score < 80):
+            gscore = 'B';
+            break;
+        case (score > 79 && score < 70):
+            gscore = 'C';
+            break;
+        case (score > 69 && score < 60):
+            gscore = 'D';
+        case (score > 59 && score < 50):
+            gscore = 'E';
+        default:
+            return 'INVALID SCORE';
+    }
+
+    return gscore;
+}
+
+let output = daftarSiswa.map((target) => {
+    return {
+        nama: target.nama,
+        nilai: target.nilai,
+        peringkat: gradingScore(target.nilai)
+    }
+})
+
+console.table(output)
 
