@@ -96,3 +96,35 @@ fetch(weatherUrl)
         console.error(err);
     })
 
+// Latihan 4: Menghitung Total Penjualan per Transaksi
+
+const transactionApi = './sales.json'
+
+fetch(transactionApi)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error('Network Error');
+        }
+        return response.json()
+    })
+    .then((dataTransaction) => {
+        let result = 0;
+        dataTransaction.forEach((datas) => {
+
+            const getTransaction = datas.total_amount;
+            result += getTransaction;
+
+            if (datas.total_amount > 1000000) {
+                console.log('Ini adalah barang terlaris : ', datas.transaction_id, 'dengan nominal harga : ', datas.total_amount);
+            }
+        })
+
+
+        console.log('Total transaksi : ', result);
+
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+
+

@@ -1,0 +1,51 @@
+[
+    {
+        "transaction_id": "TX001",
+        "date": "2024-10-10",
+        "customer": "Ali Mustofa",
+        "items": [
+            {
+                "product_id": 101,
+                "quantity": 1,
+                "price": 15000000
+            },
+            {
+                "product_id": 103,
+                "quantity": 10,
+                "price": 5000
+            }
+        ],
+        "total_amount": 15005000
+    },
+    {
+        "transaction_id": "TX002",
+        "date": "2024-10-11",
+        "customer": "Siti Rahma",
+        "items": [
+            {
+                "product_id": 102,
+                "quantity": 2,
+                "price": 7000000
+            }
+        ],
+        "total_amount": 14000000
+    },
+    {
+        "transaction_id": "TX003",
+        "date": "2024-10-12",
+        "customer": "Budi Santoso",
+        "items": [
+            {
+                "product_id": 104,
+                "quantity": 1,
+                "price": 1200000
+            },
+            {
+                "product_id": 101,
+                "quantity": 1,
+                "price": 15000000
+            }
+        ],
+        "total_amount": 16200000
+    }
+]
