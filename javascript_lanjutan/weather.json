@@ -1,0 +1,30 @@
+[
+    {
+        "city": "Jakarta",
+        "temperature": 30,
+        "condition": "Cerah Berawan",
+        "humidity": 70,
+        "wind_speed": 10
+    },
+    {
+        "city": "Bandung",
+        "temperature": 24,
+        "condition": "Hujan",
+        "humidity": 85,
+        "wind_speed": 5
+    },
+    {
+        "city": "Surabaya",
+        "temperature": 33,
+        "condition": "Cerah",
+        "humidity": 60,
+        "wind_speed": 15
+    },
+    {
+        "city": "Denpasar",
+        "temperature": 28,
+        "condition": "Berawan",
+        "humidity": 75,
+        "wind_speed": 12
+    }
+]

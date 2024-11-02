@@ -27,3 +27,28 @@ const convert = [...daftarNama].map((e) => {
 })
 
 console.log(convert);
+
+// contoh spread operator dalam array 
+
+const fruits = ['apel', 'mangga', 'melon', 'nanas', 'semangka']
+const vegetables = ['bayam', 'bawang', 'sawi', 'brokoli']
+
+const groceries = [...fruits, ...vegetables]
+console.log(groceries);
+
+// membuat array salinan tanpa mengubah aslinya
+
+const originalArray = ['mobil', 'motor', 'sendal', 'baju'];
+const arrayCopy = [...originalArray];
+
+const getCopied = arrayCopy.push('semangka');
+
+console.log(arrayCopy);
+
+//menggabungkan object
+const user = { nama: 'Egal Assegaf', umur: 23 }
+const alamat = { kota: 'Jakarta' }
+
+const userProfiled = { ...user, ...alamat };
+
+console.log(userProfiled);

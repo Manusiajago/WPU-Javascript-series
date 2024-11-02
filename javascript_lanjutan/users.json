@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "Ali Mustofa",
+        "email": "ali.mustofa@example.com",
+        "address": {
+            "city": "Jakarta",
+            "street": "Jl. Merdeka",
+            "zipcode": "10110"
+        },
+        "phone": "+62 812 3456 7890"
+    },
+    {
+        "id": 2,
+        "name": "Siti Rahma",
+        "email": "siti.rahma@example.com",
+        "address": {
+            "city": "Bandung",
+            "street": "Jl. Asia Afrika",
+            "zipcode": "40111"
+        },
+        "phone": "+62 822 1234 5678"
+    },
+    {
+        "id": 3,
+        "name": "Budi Santoso",
+        "email": "budi.santoso@example.com",
+        "address": {
+            "city": "Surabaya",
+            "street": "Jl. Gubeng",
+            "zipcode": "60281"
+        },
+        "phone": "+62 813 9876 5432"
+    }
+]

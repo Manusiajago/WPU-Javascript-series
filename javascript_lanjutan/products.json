@@ -1,0 +1,34 @@
+[
+    {
+        "id": 101,
+        "name": "Laptop",
+        "brand": "Dell",
+        "price": 15000000,
+        "category": "Electronics",
+        "stock": 20
+    },
+    {
+        "id": 102,
+        "name": "Smartphone",
+        "brand": "Samsung",
+        "price": 7000000,
+        "category": "Electronics",
+        "stock": 50
+    },
+    {
+        "id": 103,
+        "name": "Buku Tulis",
+        "brand": "Sinar Dunia",
+        "price": 5000,
+        "category": "Stationery",
+        "stock": 200
+    },
+    {
+        "id": 104,
+        "name": "Kursi Kantor",
+        "brand": "Ergotec",
+        "price": 1200000,
+        "category": "Furniture",
+        "stock": 10
+    }
+]

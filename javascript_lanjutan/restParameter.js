@@ -72,3 +72,44 @@ const { projectManager, ...otherTeam } = myTeam;
 console.log(projectManager);
 
 
+// contoh kasus nyata rest Parameter
+
+function addProduct(store, ...products) {
+    products.forEach((product) => {
+        store.push(product)
+    })
+    return store;
+}
+
+const inventory = ['apel', 'jeruk']
+const updateInventory = addProduct(inventory, ...['pisang', 'semangka', 'pepaya', 'melon'])
+
+console.log("ini buah : ", updateInventory)
+
+// penjumlahan angka menggunakan rest parameter
+function jumlahkan(...angka) {
+    let result = 0;
+
+    for (let num of angka) {
+        result += num
+    }
+
+    return result;
+}
+
+
+console.log(jumlahkan(1, 2, 3, 4, 32, 2, 3, 4, 6))
+
+// latihan penjumlahan angka menggunakan rest parameter
+
+function penjumlahan(...number) {
+    let total = 0;
+
+    for (let e of number) {
+        total += e
+    }
+
+    return total;
+}
+
+console.log(penjumlahan(1, 12, 3, 4, 4, 5, 6, 7, 5, 4, 5, 6, 7))
