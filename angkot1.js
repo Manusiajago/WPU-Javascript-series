@@ -7,3 +7,9 @@ while (noAwalAngkot <= jmlAngkot) {
 
   noAwalAngkot++;
 }
+
+const age = 10
+const nama = 'Egal Assegaf'
+console.log(`nama saya ${nama} umur saya ${age}`)
+
+/*
