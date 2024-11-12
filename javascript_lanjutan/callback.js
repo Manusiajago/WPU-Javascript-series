@@ -220,31 +220,90 @@
 // Soal pertama coba kamu ambil data film avengers diatas tahun 2008 !
 // API : 
 
-const endpoint = 'http://www.omdbapi.com/?apikey=aedf78e8&s=avengers'
+// const endpoint = 'http://www.omdbapi.com/?apikey=aedf78e8&s=avengers'
 
-fetch(endpoint)
+// fetch(endpoint)
+//     .then((response) => {
+//         if (!response.ok) {
+//             throw new Error(`Network is not OK`);
+//         }
+
+//         return response.json();
+//     })
+//     .then((data) => {
+//         //    cek apakah API mengembalikan error
+//         if (data.Response === "False") {
+//             throw new Error(data.Error)
+//         }
+
+//         console.log("Original data: ", data.Search);
+
+//         const filterMovies = data.Search.filter((m) => {
+//             return parseInt(m.Year) > 2008
+//         })
+
+//         console.log("Filtered Movies: ", filterMovies);
+//     })
+//     .catch((err) => {
+//         console.log(err.message);
+//     })
+
+
+// function prosesData(data, callback) {
+//     console.log(`data belum diubah : ${data}`);
+//     setTimeout(() => {
+//         const datas = data.toUpperCase()
+//         callback(datas)
+//     }, 2000)
+// }
+
+// function tampilkanData(hasil) {
+//     console.log(`Data yang sudah diproses: ${hasil}`);
+// }
+
+// prosesData('ubah ini ke huruf besar', tampilkanData)
+
+// memanggil api lokal mahasiswa.json GET request
+const apiUrl = 'mahasiswa.json';
+
+fetch(apiUrl)
     .then((response) => {
         if (!response.ok) {
-            throw new Error(`Network is not OK`);
+            throw new Error(`Error: ${response.status}`);
         }
 
         return response.json();
     })
     .then((data) => {
-        //    cek apakah API mengembalikan error
-        if (data.Response === "False") {
-            throw new Error(data.Error)
-        }
-
-        console.log("Original data: ", data.Search);
-
-        const filterMovies = data.Search.filter((m) => {
-            return parseInt(m.Year) > 2008
+        console.log(data);
+        const namaMahasiswa = data.mahasiswa.map((target) => {
+            return target.nama;
+        })
+        const jurusanMahasiswa = data.mahasiswa.map((target) => {
+            return target.jurusan;
+        })
+        const mhs2020 = data.mahasiswa.filter((target) => {
+            return target.angkatan > 2020;
         })
 
-        console.log("Filtered Movies: ", filterMovies);
+        //menampilkan mahasiswa berdasarkan jurusan 
+        const mhsTeknikInformatika = data.mahasiswa.filter((target) => {
+            return target.jurusan === 'Teknik Informatika';
+        })
+
+        //menampilkan mahasiswa dengan ID 1 
+        const mhsId1 = data.mahasiswa.filter((target) => {
+            return target.id === 1;
+        })
+
+        console.log(mhsId1)
+        console.log('Jurusan teknik informatika : ', mhsTeknikInformatika)
+        console.log('angkatan diatas 2020 : ', mhs2020)
+        console.log('ini adalaha data nama mahasiswa : ', namaMahasiswa);
+        console.log('Ini adalah data jurusan mahasiswa : ', jurusanMahasiswa);
     })
+
     .catch((err) => {
-        console.log(err.message);
+        console.log(err);
     })
 
