@@ -319,3 +319,45 @@ simulasiLogin('admin', "123")
         console.log(error);
     })
 
+
+// contoh sederhana promise
+// function myPromise() {
+//     return new Promise((resolve, reject) => {
+//         let success = true;
+
+//         if (success) {
+//             resolve(`Operasi berhasil`);
+//         } else {
+//             reject(`Operasi gagal`);
+//         }
+//     })
+// }
+
+// myPromise()
+//     .then((result) => {
+//         console.log(result);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+
+function myPromise() {
+    return new Promise((resolve, reject) => {
+        let sukses = true;
+        setTimeout(() => {
+            if (sukses) {
+                resolve(`Operasi berhasil bro`);
+            } else {
+                reject(`Operasi gagal`)
+            }
+        }, 3000)
+    })
+}
+
+myPromise()
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((err) => {
+        console.log(err);
+    })

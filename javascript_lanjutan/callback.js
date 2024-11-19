@@ -470,159 +470,457 @@
 
 // //-------------------------------
 
-// const siswaArray = [
-//     { nama: "Budi", nilai: 82 },
-//     { nama: "Ani", nilai: 60 },
-//     { nama: "Dina", nilai: 90 },
-//     { nama: "Fajar", nilai: 70 },
-// ];
+// // const siswaArray = [
+// //     { nama: "Budi", nilai: 82 },
+// //     { nama: "Ani", nilai: 60 },
+// //     { nama: "Dina", nilai: 90 },
+// //     { nama: "Fajar", nilai: 70 },
+// // ];
 
-// function filterSiswaLulus(array, callback) {
+// // function filterSiswaLulus(array, callback) {
 
-//     const lulus = array.filter((target) => {
-//         return target.nilai >= 75
+// //     const lulus = array.filter((target) => {
+// //         return target.nilai >= 75
+// //     })
+
+// //     callback(lulus)
+
+// // }
+
+
+// // function tampilkanLulus(siswaLulus) {
+// //     console.log('Siswa yang lulus : ' + siswaLulus);
+// // }
+
+
+// // console.log(filterSiswaLulus(siswaArray, tampilkanLulus));
+
+// // //mencari nilai rata rata
+
+// // function findRataRata(array, callback) {
+// //     let hasilData = 0
+
+// //     for (let i = 0; i < array.length; i++) {
+// //         hasilData += array[i];
+// //     }
+
+// //     const average = hasilData / array.length;
+// //     callback(average);
+// // }
+
+// // function tampilkanData(array) {
+// //     console.log(`Nilai rata rata : ${array}`);
+// // }
+
+
+// // console.log(findRataRata([70, 85, 90, 65, 88, 92], tampilkanData));
+
+
+// // // mencari karakter yg mengandung huruf
+
+// // function findChar(str, char, callback) {
+// //     let count = 0;
+
+// //     for (let i = 0; i < str.length; i++) {
+// //         if (str[i] === char) {
+// //             count++;
+// //         }
+// //     }
+
+// //     callback(count);
+// // }
+
+// // function tampilkanCount(count) {
+// //     console.log(`Karakter ditemukan sebanyak ${count} kali.`);
+// // }
+
+
+// // console.log(findChar('Halo saya sedang belajar Javascript', 'a', tampilkanCount));
+
+// // function tambahkanJikaGenap(array, value, callback) {
+// //     if (value % 2 === 0) {
+// //         array.push(value);
+// //     }
+
+// //     callback(array);
+// // }
+
+// // function displayArr(array) {
+// //     console.log('Array saat ini : ', array);
+// // }
+
+// // const myArr = [1, 2, 3, 4];
+// // console.log(tambahkanJikaGenap(myArr, 1, displayArr))
+// // console.log(tambahkanJikaGenap(myArr, 2, displayArr))
+
+
+// function cekKetersediaan(product, productName, callback) {
+//     const tersedia = product.some((products) => {
+//         return products.name === productName;
 //     })
 
-//     callback(lulus)
+//     callback(tersedia)
 
 // }
 
 
-// function tampilkanLulus(siswaLulus) {
-//     console.log('Siswa yang lulus : ' + siswaLulus);
+// function menampilkanBarang(tersedia) {
+//     if (tersedia) {
+//         console.log("Barang tersedia");
+//     } else {
+//         console.log(`Barang tidak tersedia`);
+//     }
 // }
 
 
-// console.log(filterSiswaLulus(siswaArray, tampilkanLulus));
 
-// //mencari nilai rata rata
+// const storeProducts = [
+//     { name: "Laptop", price: 15000000 },
+//     { name: "Mouse", price: 200000 },
+//     { name: "Keyboard", price: 300000 },
+// ];
 
-// function findRataRata(array, callback) {
-//     let hasilData = 0
 
-//     for (let i = 0; i < array.length; i++) {
-//         hasilData += array[i];
+// console.log(cekKetersediaan(storeProducts, 'Laptop', menampilkanBarang));
+
+// // filter usia 18+
+
+// function filterUsia(array, cekUmur, callback) {
+//     const filtered = array.filter(cekUmur);
+
+//     callback(filtered);
+// }
+
+// function filterUmur(umur) {
+//     return umur >= 18;
+// }
+
+
+// function tampilkanUmur(umur) {
+//     console.log("Usia di atas atau sama dengan 18:", umur);
+// }
+
+// const ages = [12, 17, 18, 21, 14, 25, 30];
+// console.log(filterUsia(ages, filterUmur, tampilkanUmur));
+
+
+// // - -------------- cek bilangan positif negatif
+
+// function cekBilangan(num, callback) {
+//     const bilanganPositif = num.filter((target) => {
+//         return target > 0;
+//     })
+
+//     const bilanganNegatif = num.filter((target) => {
+//         return target < 0;
+//     })
+
+//     callback(bilanganNegatif, bilanganPositif);
+// }
+
+// function tampilkanBilangan(negatif, positif) {
+//     console.log("Bilangan negatif:", negatif);
+//     console.log("Bilangan positif:", positif);
+// }
+
+
+// const myNumbers = [1, 2, 3, 4, 5, 6, -7, -8, -9, -10, -11, -12, -13, -14];
+// console.log(cekBilangan(myNumbers, tampilkanBilangan));
+
+// // contoh dasar asyncgronous callback
+
+// function prosesData(callback) {
+//     console.log('Proses dimulai ....')
+
+//     setTimeout(() => {
+//         console.log('Proses selesai')
+//         callback('Data telah diterima')
+//     }, 2000)
+// }
+
+// function tampilkanData(data) {
+//     console.log(data);
+// }
+
+// console.log(prosesData(tampilkanData));
+
+// // function ambil data pengguna
+// function ambilDataPengguna(id, callback) {
+//     console.log('sedang mengambil data pengguna...');
+
+//     const dataPengguna = {
+//         id: id,
+//         nama: 'Egal',
+//         role: 'Programmer'
 //     }
 
-//     const average = hasilData / array.length;
-//     callback(average);
+//     callback(null, dataPengguna);
 // }
 
-// function tampilkanData(array) {
-//     console.log(`Nilai rata rata : ${array}`);
+// function tampilkanDataPengguna(error, data) {
+//     if (error) {
+//         console.log('Terjadi kesalahan : ', error);
+//     } else {
+//         console.log('Data pengguna : ', data);
+//     }
 // }
 
 
-// console.log(findRataRata([70, 85, 90, 65, 88, 92], tampilkanData));
+// console.log(ambilDataPengguna('123', tampilkanDataPengguna));
+
+// const obj = [{ id: 101, nilai: 87 },
+// { id: 102, nilai: 90 },
+// { id: 103, nilai: 75 },
+// { id: 104, nilai: 85 },
+// // { id: 105, nilai: 95 }
+// // ];
+
+// // function getDataMahaiswa(id, callback) {
+// //     console.log('Mengambil data mahaiswa...');
+// //     setTimeout(() => {
+// //         const data = obj.find((target) => {
+// //             return target.id === id
+// //         })
+
+// //         if (data) {
+// //             callback(null, data);
+// //         } else {
+// //             callback(`Mahasiswa dengan ID ${id} tidak ditemukan`, null)
+// //         }
+
+// //     }, 2000)
+// // }
+
+// // function tampilkanDataMahasiswa(error, data) {
+// //     if (error) {
+// //         console.log(`Terjadi kesalahan : ${error}`);
+// //     } else {
+// //         console.log(`Data mahasiswa : ${data.id} , Nilai : ${data.nilai}`);
+// //     }
+// // }
+
+// // console.log(getDataMahaiswa(103, tampilkanDataMahasiswa));
 
 
-// // mencari karakter yg mengandung huruf
+// // const mhs = [{
+// //     nama: "Egal Assegaf",
+// //     email: "egalassegaf@gmail.com",
+// //     npm: 202043500768,
+// //     jurusan: "Teknik Informatika",
+// //     id: 1
+// // },
+// // {
+// //     nama: "Tri Syhanda Ade Lia",
+// //     email: "tsadelia02@gmail.com",
+// //     npm: 202043500761,
+// //     jurusan: "Teknik Informatika",
+// //     id: 2
+// // },
+// // {
+// //     nama: "Arga dwi",
+// //     email: "examples@gmail",
+// //     npm: 202043500762,
+// //     jurusan: "Teknik Informatika",
+// //     id: 3
+// // },
+// // {
+// //     nama: "salsa",
+// //     email: "example@gmail.com",
+// //     npm: 202043500763,
+// //     jurusan: "Teknik Informatika",
+// //     id: 4
+// // }
+// // ]
 
-// function findChar(str, char, callback) {
-//     let count = 0;
+// // function cariNamaMhs(obj) {
+// //     return obj.map((target) => {
+// //         return target.nama;
+// //     })
+// // }
 
-//     for (let i = 0; i < str.length; i++) {
-//         if (str[i] === char) {
-//             count++;
+// // console.log(cariNamaMhs(mhs));
+
+// // function getDatasMhs(id, callback) {
+// //     console.log(`Sedang mencari data mahasiswa ...`);
+
+// //     setTimeout(() => {
+// //         const data = mhs.find((target) => {
+// //             return target.id === id;
+// //         })
+
+// //         if (data) {
+// //             callback(null, data);
+// //         } else {
+// //             callback(`Mahasiswa dengan ID ${id} tidak ditemukan`, null);
+// //         }
+// //     }, 2000)
+// // }
+
+// // function tampilkanDataMhs(error, data) {
+// //     if (error) {
+// //         console.log(`Terjadi kesalahan : ${error}`);
+// //     } else {
+// //         console.log(`Data mahasiswa : ${data.nama} , email : ${data.email} , jurusan : ${data.jurusan} , Npm : ${data.npm} , Id : ${data.id}`);
+// //     }
+// // }
+
+// // console.log(getDatasMhs(1, tampilkanDataMhs));
+
+
+// const namaSiswa = [{
+//     nama: 'Egal Assegaf',
+//     kelas: 5,
+//     nilai: [80, 90, 85, 78, 95],
+//     id: 1
+// },
+// {
+//     nama: 'Adelia',
+//     kelas: 5,
+//     nilai: [70, 80, 85, 78, 95],
+//     id: 1
+// },
+// {
+//     nama: 'Tri Syhanda Ade Lia',
+//     kelas: 5,
+//     nilai: [80, 90, 85, 78, 95],
+//     id: 1
+// },
+// {
+//     nama: 'Arga dwi',
+//     kelas: 5,
+//     nilai: [80, 90, 85, 78, 95],
+//     id: 1
+// }, {
+//     nama: 'salsa',
+//     kelas: 5,
+//     nilai: [80, 90, 85, 78, 95],
+//     id: 1
+// }
+// ]
+
+// function getDataSiswa(id, callback) {
+//     console.log('Sedang mencari data siswa...');
+
+//     setTimeout(() => {
+//         const data = namaSiswa.find((target) => {
+//             return target.id === id;
+//         })
+
+//         if (data) {
+//             callback(null, data);
+//         } else {
+//             callback('Mahasiswa dengan ID' + id + 'tidak ditemukan', null);
 //         }
+//     }, 3000)
+// }
+
+// function tampilkanDataSiswa(error, data) {
+//     if (error) {
+//         console.log('Terjadi kesalahan : ', error);
+//     } else {
+//         console.log(`Data siswa : ${data.nama} , ${data.kelas} , ${data.nilai} , ${data.id}`);
 //     }
-
-//     callback(count);
 // }
 
-// function tampilkanCount(count) {
-//     console.log(`Karakter ditemukan sebanyak ${count} kali.`);
+// console.log(getDataSiswa(1, tampilkanDataSiswa));
+
+//request api menggunakan ajax
+
+// let url = './mahasiswa.json';
+
+// function getDataMahasiswa(url, successCallback, errorCallback) {
+//     let xhr = new XMLHttpRequest();
+
+//     xhr.onreadystatechange = function () {
+//         if (this.readyState === 4) {
+//             if (this.status === 200) {
+//                 successCallback(JSON.parse(this.responseText));
+//             } else {
+//                 errorCallback(`Terjadi kesalahan pada request: ${this.status}`);
+//             }
+//         }
+//     };
+
+//     xhr.open('GET', url, true);
+//     xhr.send();
 // }
 
-
-// console.log(findChar('Halo saya sedang belajar Javascript', 'a', tampilkanCount));
-
-// function tambahkanJikaGenap(array, value, callback) {
-//     if (value % 2 === 0) {
-//         array.push(value);
-//     }
-
-//     callback(array);
+// function successCallback(responseText) {
+//     console.log('Data mahasiswa : ', responseText);
 // }
 
-// function displayArr(array) {
-//     console.log('Array saat ini : ', array);
+// function errorCallback(error) {
+//     console.error('Terjadi kesalahan : ', error); // Gunakan console.error untuk log error
 // }
 
-// const myArr = [1, 2, 3, 4];
-// console.log(tambahkanJikaGenap(myArr, 1, displayArr))
-// console.log(tambahkanJikaGenap(myArr, 2, displayArr))
+// // Memanggil fungsi (tanpa console.log di sini)
+// getDataMahasiswa(url, successCallback, errorCallback);
 
 
-function cekKetersediaan(product, productName, callback) {
-    const tersedia = product.some((products) => {
-        return products.name === productName;
-    })
-
-    callback(tersedia)
-
-}
-
-
-function menampilkanBarang(tersedia) {
-    if (tersedia) {
-        console.log("Barang tersedia");
-    } else {
-        console.log(`Barang tidak tersedia`);
-    }
-}
-
-
-
-const storeProducts = [
-    { name: "Laptop", price: 15000000 },
-    { name: "Mouse", price: 200000 },
-    { name: "Keyboard", price: 300000 },
+// latihan callback 
+const siswa = [
+    { id: 1, nama: 'Ahmad', nilai: 85 },
+    { id: 2, nama: 'Budi', nilai: 70 },
+    { id: 3, nama: 'Citra', nilai: 90 },
+    { id: 4, nama: 'Dewi', nilai: 60 },
 ];
 
-
-console.log(cekKetersediaan(storeProducts, 'Laptop', menampilkanBarang));
-
-// filter usia 18+ 
-
-function filterUsia(array, cekUmur, callback) {
-    const filtered = array.filter(cekUmur);
-
-    callback(filtered);
-}
-
-function filterUmur(umur) {
-    return umur >= 18;
-}
-
-
-function tampilkanUmur(umur) {
-    console.log("Usia di atas atau sama dengan 18:", umur);
-}
-
-const ages = [12, 17, 18, 21, 14, 25, 30];
-console.log(filterUsia(ages, filterUmur, tampilkanUmur));
-
-
-// - -------------- cek bilangan positif negatif
-
-function cekBilangan(num, callback) {
-    const bilanganPositif = num.filter((target) => {
-        return target > 0;
+function siswaLulus(data, callback, callbackJumlah) {
+    const lulus = data.filter((target) => {
+        return target.nilai >= 75;
     })
 
-    const bilanganNegatif = num.filter((target) => {
-        return target < 0;
+    callback(lulus);
+    callbackJumlah(lulus.length);
+
+
+
+}
+
+function tampilkanSiswaLulus(siswaLuluss) {
+    console.log(`Daftar siswa lulus : `);
+
+    const daftarLulus = siswaLuluss.map((target) => {
+        console.log(`Nama :  ${target.nama} , Nilai :  ${target.nilai}`);
     })
-
-    callback(bilanganNegatif, bilanganPositif);
 }
 
-function tampilkanBilangan(negatif, positif) {
-    console.log("Bilangan negatif:", negatif);
-    console.log("Bilangan positif:", positif);
+function hitungJumlahLulus(daftar) {
+    console.log(`Jumlah siswa yang lulus : ${daftar}`)
 }
 
+siswaLulus(siswa, tampilkanSiswaLulus, hitungJumlahLulus);
 
-const myNumbers = [1, 2, 3, 4, 5, 6, -7, -8, -9, -10, -11, -12, -13, -14];
-console.log(cekBilangan(myNumbers, tampilkanBilangan));
+const users = [{
+    nama: " Egal Assegaf",
+    jurusan: "Teknik Informatika"
+}, {
+    nama: "Adelia",
+    jurusan: "Teknik Informatika"
+}]
+
+const createUser = (user, callback) => {
+    setTimeout(() => {
+        users.push(user);
+        callback();
+    }, 3000)
+}
+
+const totalUser = (() => {
+    console.log(`Total user ${users.length}`);
+})
+
+const displayUser = (() => {
+    console.log(`Daftar user saat ini : `);
+
+    users.forEach((target) => {
+        console.log(`Nama :  ${target.nama} , Jurusan :  ${target.jurusan}`);
+    })
+})
+
+createUser({ nama: 'babihutan', jurusan: 'kehutanan' }, () => {
+    setTimeout(displayUser, 2000);
+})
+
+//
+
