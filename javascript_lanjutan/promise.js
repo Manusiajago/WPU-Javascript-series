@@ -121,99 +121,150 @@
 //     .then((message) => {
 //         console.log(message);
 //     })
-//     .catch((error) => {
-//         console.log(error);
-//     })
-
-// // ambil data API lebih dari 1 menggunakan promise.all
-// const getData1 = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve({
-//             "mahasiswa": [
-//                 {
-//                     "id": 1,
-//                     "nama": "Andi",
-//                     "jurusan": "Teknik Informatika",
-//                     "angkatan": 2020
-//                 },
-//                 {
-//                     "id": 2,
-//                     "nama": "Budi",
-//                     "jurusan": "Sistem Informasi",
-//                     "angkatan": 2019
-//                 },
-//                 {
-//                     "id": 3,
-//                     "nama": "Citra",
-//                     "jurusan": "Teknik Elektro",
-//                     "angkatan": 2021
-//                 },
-//                 {
-//                     "id": 4,
-//                     "nama": "Dewi",
-//                     "jurusan": "Matematika",
-//                     "angkatan": 2020
-//                 },
-//                 {
-//                     "id": 5,
-//                     "nama": "Eko",
-//                     "jurusan": "Fisika",
-//                     "angkatan": 2018
-//                 }
-//             ]
-//         }
-//         );
-//     }, 2000)
-// })
-
-// const getData2 = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve({
-//             "matakuliah": [
-//                 {
-//                     "nama": "Pemrograman Web",
-//                     "dosen": "Dr. Ahmad",
-//                     "sks": 3
-//                 },
-//                 {
-//                     "nama": "Basis Data",
-//                     "dosen": "Prof. Budi",
-//                     "sks": 4
-//                 },
-//                 {
-//                     "nama": "Algoritma dan Struktur Data",
-//                     "dosen": "Dr. Siti",
-//                     "sks": 3
-//                 }
-//             ]
-//         }
-//         )
-//     }, 2000)
-// })
-
-// // Promise.all([getData1, getData2])
-// //     .then((result) => {
-// //         console.log(result)
-// //     })
 // //     .catch((error) => {
-// //         console.log(error)
+// //         console.log(error);
+// //     })
+
+// // // ambil data API lebih dari 1 menggunakan promise.all
+// // const getData1 = new Promise((resolve, reject) => {
+// //     setTimeout(() => {
+// //         resolve({
+// //             "mahasiswa": [
+// //                 {
+// //                     "id": 1,
+// //                     "nama": "Andi",
+// //                     "jurusan": "Teknik Informatika",
+// //                     "angkatan": 2020
+// //                 },
+// //                 {
+// //                     "id": 2,
+// //                     "nama": "Budi",
+// //                     "jurusan": "Sistem Informasi",
+// //                     "angkatan": 2019
+// //                 },
+// //                 {
+// //                     "id": 3,
+// //                     "nama": "Citra",
+// //                     "jurusan": "Teknik Elektro",
+// //                     "angkatan": 2021
+// //                 },
+// //                 {
+// //                     "id": 4,
+// //                     "nama": "Dewi",
+// //                     "jurusan": "Matematika",
+// //                     "angkatan": 2020
+// //                 },
+// //                 {
+// //                     "id": 5,
+// //                     "nama": "Eko",
+// //                     "jurusan": "Fisika",
+// //                     "angkatan": 2018
+// //                 }
+// //             ]
+// //         }
+// //         );
+// //     }, 2000)
+// // })
+
+// // const getData2 = new Promise((resolve, reject) => {
+// //     setTimeout(() => {
+// //         resolve({
+// //             "matakuliah": [
+// //                 {
+// //                     "nama": "Pemrograman Web",
+// //                     "dosen": "Dr. Ahmad",
+// //                     "sks": 3
+// //                 },
+// //                 {
+// //                     "nama": "Basis Data",
+// //                     "dosen": "Prof. Budi",
+// //                     "sks": 4
+// //                 },
+// //                 {
+// //                     "nama": "Algoritma dan Struktur Data",
+// //                     "dosen": "Dr. Siti",
+// //                     "sks": 3
+// //                 }
+// //             ]
+// //         }
+// //         )
+// //     }, 2000)
+// // })
+
+// // // Promise.all([getData1, getData2])
+// // //     .then((result) => {
+// // //         console.log(result)
+// // //     })
+// // //     .catch((error) => {
+// // //         console.log(error)
+// // //     })
+
+
+// // // // mengulang contoh implementasi promise 
+
+// // // const myPromise = new Promise((resolve, reject) => {
+
+// // //     let berhasil = true;
+
+// // //     if (berhasil) {
+// // //         resolve('Berhasil !')
+// // //     } else {
+// // //         reject('Gagal!')
+// // //     }
+// // // });
+
+// // // myPromise
+// // //     .then((result) => {
+// // //         console.log(result);
+// // //     })
+// // //     .catch((err) => {
+// // //         console.log(err);
+// // //     })
+
+
+// // //latihan 1 check password
+
+// // function checkPassword(password) {
+// //     return new Promise((resolve, reject) => {
+
+// //         setTimeout(() => {
+// //             if (password.length > 5) {
+// //                 resolve(`Password valid`);
+// //             } else {
+// //                 reject(`Password ivalid`);
+// //             }
+// //         }, 3000)
+// //     })
+// // }
+
+// // checkPassword('EgalAssegaf')
+// //     .then((result) => {
+// //         console.log(result);
+// //     })
+
+// //     .catch((err) => {
+// //         console.error(err);
 // //     })
 
 
-// // // mengulang contoh implementasi promise 
 
-// // const myPromise = new Promise((resolve, reject) => {
+// // //simulasi mendownload file
+// // function downloadFile(fileName, waktu) {
+// //     return new Promise((resolve, reject) => {
 
-// //     let berhasil = true;
+// //         setTimeout(() => {
+// //             const sukses = Math.random() > 0.3;
 
-// //     if (berhasil) {
-// //         resolve('Berhasil !')
-// //     } else {
-// //         reject('Gagal!')
-// //     }
-// // });
+// //             if (sukses) {
+// //                 resolve(`${fileName} berhasil diunduh`);
+// //             } else {
+// //                 reject(`${fileName} gagal diunduh`);
+// //             }
+// //         }, waktu)
+// //     })
+// // }
 
-// // myPromise
+// // downloadFile("Video.mp4", 3000)
 // //     .then((result) => {
 // //         console.log(result);
 // //     })
@@ -222,114 +273,84 @@
 // //     })
 
 
-// //latihan 1 check password
-
-// function checkPassword(password) {
+// // function simulasi login()
+// function simulasiLogin(username, password) {
 //     return new Promise((resolve, reject) => {
 
 //         setTimeout(() => {
-//             if (password.length > 5) {
-//                 resolve(`Password valid`);
+
+//             if (username === "admin" && password === "123") {
+//                 resolve(username);
 //             } else {
-//                 reject(`Password ivalid`);
+//                 reject(`Login gagal`)
 //             }
-//         }, 3000)
+//         }, 2000)
 //     })
 // }
 
-// checkPassword('EgalAssegaf')
-//     .then((result) => {
-//         console.log(result);
-//     })
-
-//     .catch((err) => {
-//         console.error(err);
-//     })
-
-
-
-// //simulasi mendownload file
-// function downloadFile(fileName, waktu) {
+// function getUserData(username) {
 //     return new Promise((resolve, reject) => {
+//         console.log('Sedang mengambil data ...')
 
 //         setTimeout(() => {
-//             const sukses = Math.random() > 0.3;
-
-//             if (sukses) {
-//                 resolve(`${fileName} berhasil diunduh`);
-//             } else {
-//                 reject(`${fileName} gagal diunduh`);
-//             }
-//         }, waktu)
+//             resolve({ username, role: "admin" });
+//         }, 2000)
 //     })
+
 // }
 
-// downloadFile("Video.mp4", 3000)
-//     .then((result) => {
-//         console.log(result);
+// function displayUserData(userData) {
+//     console.log("Data pengguna : ", userData);
+// }
+
+// //tes fungsi 
+
+// simulasiLogin('admin', "123")
+//     .then((response) => {
+//         console.log(response);
+//         return getUserData(response);
 //     })
-//     .catch((err) => {
-//         console.log(err);
+
+//     .then((userData) => {
+//         displayUserData(userData);
+//     })
+
+//     .catch((error) => {
+//         console.log(error);
 //     })
 
 
-// function simulasi login()
-function simulasiLogin(username, password) {
-    return new Promise((resolve, reject) => {
+// // contoh sederhana promise
+// // function myPromise() {
+// //     return new Promise((resolve, reject) => {
+// //         let success = true;
 
-        setTimeout(() => {
+// //         if (success) {
+// //             resolve(`Operasi berhasil`);
+// //         } else {
+// //             reject(`Operasi gagal`);
+// //         }
+// //     })
+// // }
 
-            if (username === "admin" && password === "123") {
-                resolve(username);
-            } else {
-                reject(`Login gagal`)
-            }
-        }, 2000)
-    })
-}
+// // myPromise()
+// //     .then((result) => {
+// //         console.log(result);
+// //     })
+// //     .catch((err) => {
+// //         console.log(err);
+// //     })
 
-function getUserData(username) {
-    return new Promise((resolve, reject) => {
-        console.log('Sedang mengambil data ...')
-
-        setTimeout(() => {
-            resolve({ username, role: "admin" });
-        }, 2000)
-    })
-
-}
-
-function displayUserData(userData) {
-    console.log("Data pengguna : ", userData);
-}
-
-//tes fungsi 
-
-simulasiLogin('admin', "123")
-    .then((response) => {
-        console.log(response);
-        return getUserData(response);
-    })
-
-    .then((userData) => {
-        displayUserData(userData);
-    })
-
-    .catch((error) => {
-        console.log(error);
-    })
-
-
-// contoh sederhana promise
 // function myPromise() {
 //     return new Promise((resolve, reject) => {
-//         let success = true;
-
-//         if (success) {
-//             resolve(`Operasi berhasil`);
-//         } else {
-//             reject(`Operasi gagal`);
-//         }
+//         let sukses = true;
+//         setTimeout(() => {
+//             if (sukses) {
+//                 resolve(`Operasi berhasil bro`);
+//             } else {
+//                 reject(`Operasi gagal`)
+//             }
+//         }, 3000)
 //     })
 // }
 
@@ -341,23 +362,45 @@ simulasiLogin('admin', "123")
 //         console.log(err);
 //     })
 
-function myPromise() {
+
+
+// ambil data ini
+const users = [{ nama: 'Egal Assegaf', id: 1 },
+{ nama: 'Adelia', id: 2 },
+{ nama: 'Tri Syhanda Ade Lia', id: 3 },
+{ nama: 'Arga dwi', id: 4 },
+{ nama: 'Salsa', id: 5 }
+];
+
+
+function getData() {
     return new Promise((resolve, reject) => {
-        let sukses = true;
         setTimeout(() => {
-            if (sukses) {
-                resolve(`Operasi berhasil bro`);
+            const error = false;
+
+            if (error) {
+                reject(`Terjadi kesalahan saat mengambil data`)
             } else {
-                reject(`Operasi gagal`)
+                resolve(users);
             }
-        }, 3000)
+        }, 2000)
     })
 }
 
-myPromise()
+getData()
     .then((result) => {
-        console.log(result);
+        const namaUser = result.map((target) => {
+            return target.nama
+        })
+
+        console.log(namaUser);
+
+        const idLebihDari1 = result.filter((target) => {
+            return target.id > 1;
+        })
+
+        console.log('Ini adalah daftar id lebih dari 1 : ', idLebihDari1);
     })
     .catch((err) => {
-        console.log(err);
+        console.log(err)
     })
