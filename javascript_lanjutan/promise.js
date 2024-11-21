@@ -365,6 +365,57 @@
 
 
 // ambil data ini
+
+
+
+// function getData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const error = false;
+
+//             if (error) {
+//                 reject(`Terjadi kesalahan saat mengambil data`)
+//             } else {
+//                 resolve(users);
+//             }
+//         }, 2000)
+//     })
+// }
+
+// getData()
+//     .then((result) => {
+//         const namaUser = result.map((target) => {
+//             return target.nama
+//         })
+
+//         console.log(namaUser);
+
+//         const idLebihDari1 = result.filter((target) => {
+//             return target.id > 1;
+//         })
+
+//         console.log('Ini adalah daftar id lebih dari 1 : ', idLebihDari1);
+//     })
+//     .catch((err) => {
+//         console.log(err)
+//     })
+
+//contoh dasar callback
+
+function sapaTeman(nama, callback) {
+    setTimeout(() => {
+
+        callback(nama)
+    }, 2000)
+}
+
+function sayHello(username) {
+    console.log('Hello', username)
+}
+
+console.log(sapaTeman('Egal', sayHello));
+
+//ambil data ini 
 const users = [{ nama: 'Egal Assegaf', id: 1 },
 { nama: 'Adelia', id: 2 },
 { nama: 'Tri Syhanda Ade Lia', id: 3 },
@@ -373,34 +424,26 @@ const users = [{ nama: 'Egal Assegaf', id: 1 },
 ];
 
 
-function getData() {
+function fetchUserData(userId) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            const error = false;
+            const data = users.find((target) => {
+                return target.id === userId;
+            })
 
-            if (error) {
-                reject(`Terjadi kesalahan saat mengambil data`)
+            if (data) {
+                resolve(data);
             } else {
-                resolve(users);
+                reject(`User ${userId} tidak ditemukan !`)
             }
-        }, 2000)
+        }, 3000)
     })
 }
 
-getData()
-    .then((result) => {
-        const namaUser = result.map((target) => {
-            return target.nama
-        })
-
-        console.log(namaUser);
-
-        const idLebihDari1 = result.filter((target) => {
-            return target.id > 1;
-        })
-
-        console.log('Ini adalah daftar id lebih dari 1 : ', idLebihDari1);
+fetchUserData(1)
+    .then((data) => {
+        console.log(data);
     })
     .catch((err) => {
-        console.log(err)
+        console.log(`Error : ${err.message}`);
     })
