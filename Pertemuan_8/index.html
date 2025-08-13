@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan_8</title>
+</head>
+
+<body>
+    <h2>Mencoba Fungsi</h2>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+
+    <script>
+        // kita belajar function
+        function myFunction(angka1, angka2) {
+            return angka1 * angka2;
+        }
+
+        const result = myFunction(10, 20);
+        document.getElementById('demo').innerText = `Hasilnya adalah: ${result}`;
+
+        //ubah celcius ke fahrenheit
+        function fahrenheit(celcius) {
+            return (5 / 9) * (celcius - 32);
+        }
+
+        const result2 = fahrenheit(80);
+        document.getElementById('demo2').innerText = `hasil covert ke fahrenheit: ${result2}`;
+
+        //contoh menggunakan arrow function 
+        let fungsiPanah = (a, b) => {
+            return a + b;
+        }
+
+        let hasil = fungsiPanah(1, 2);
+        document.getElementById('demo3').innerText = `${hasil}`
+
+        const sayHello = (namaKamu) => {
+            return `Halo ${namaKamu}`
+        }
+
+        const panggil = sayHello('Arga')
+        console.log(panggil)
+
+        const sayHello2 = (nama, umur) => {
+            return `Halo ${nama} umur kamu: ${umur}`
+        }
+
+        const callSayHello = sayHello2('tri', 24);
+        console.log(callSayHello)
+
+
+
+        // variabel yg di deklarasikan di dalam function akan menjadi variabel LOKAL dalam javacsiprt
+
+        const functionLocal = (target) => {
+            if (target < 5) {
+                console.log(`itu kurang dari 5`);
+            } else {
+                console.log(`lebih dari 5`)
+            }
+
+            return target;
+
+        }
+
+        console.log(functionLocal(10))
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
