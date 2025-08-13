@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello world</h1>
+
+    <p id="demo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, minus.</p>
+    <button id="btn" onclick="ubahWarna()">Ubah warna</button>
+    <p id="demo_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora incidunt doloribus recusandae,
+        soluta totam esse
+        illum voluptas sequi non natus!
+    </p>
+
+    <button id="btn_demo2">Ganti elemen</button>
+    <button id="defaultBtn">Kembalikan</button>
+
+    <button onclick="window.print()">Print halaman ini</button>
+
+
+    <script>
+        function ubahWarna() {
+            document.getElementById('demo').style.color = 'red';
+        }
+
+        const demo_2 = document.getElementById('demo_2');
+        const btnDemo2 = document.getElementById('btn_demo2');
+        const defaultBtn = document.getElementById('defaultBtn');
+        // demo_2.innerHTML = `<h1>Halo dunia</h1>`
+
+        btnDemo2.addEventListener('click', function () {
+            demo_2.innerHTML = `<h2>Hello world</h2>`
+        })
+
+        defaultBtn.addEventListener('click', function () {
+            demo_2.innerHTML = `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora incidunt doloribus recusandae,
+        soluta totam esse
+        illum voluptas sequi non natus!</p>`
+        })
+
+        document.write(5 + 6)
+
+        window.alert(10 + 12)
+
+
+    </script>
+</body>
+
+</html>
