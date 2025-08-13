@@ -65,6 +65,35 @@ function popArr() {
     return cobaPush;
 }
 
-console.log(pushArr('Asep')); // menggunakan push untuk menambahkan elemen akhir array 
-console.log(unshiftArr('Dika')); // menggunakan unshift untuk menambahkan pada elemen awal array
-console.log(popArr()) // menggunakan pop untuk menghapus elemen terakhir array
+function shiftArr() {
+    cobaPush.shift();
+    return cobaPush;
+}
+
+function ubahElemen() {
+    cobaPush[0] = 'sayangku';
+    return cobaPush;
+}
+
+const myNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+
+function filterArr(arr) {
+    return arr.filter((target) => {
+        return target % 2 === 0;
+    })
+}
+
+function filterGanjil(arr) {
+    return arr.filter((target) => {
+        return target % 2 !== 0;
+    })
+}
+
+
+// console.log(pushArr('Asep')); // menggunakan push untuk menambahkan elemen akhir array 
+// console.log(unshiftArr('Dika')); // menggunakan unshift untuk menambahkan pada elemen awal array
+// console.log(popArr()) // menggunakan pop untuk menghapus elemen terakhir 
+// console.log(shiftArr()) // menggunakan shift untuk menghapus elemen pertama
+console.log(ubahElemen());
+console.log(filterArr(myNumber));
+console.log(filterGanjil(myNumber));

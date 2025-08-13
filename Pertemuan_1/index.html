@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1 belajar JavaSCript</title>
+</head>
+
+<body>
+    <h1>Selamat datang di pertemuan 1 </h1>
+    <hr>
+
+    <p id="demo">Coba ubah huruf ini!</p>
+    <button id="btn-ubah">Ubah</button>
+    <hr>
+    <!-- Ubah lampu on off -->
+    <img src="Off.jpeg" alt="image off" id="lampu">
+    <button id="btn_on" style="display: block; margin: 5% 0">Nyalakan Lampu</button>
+    <button id="btn_off" style="display: block;">Matikan Lampu</button>
+
+    <hr>
+    <!-- Javascript juga dapat mengubah font -->
+    <h1 class="title">Halo nama saya, Egal</h1>
+    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi esse quaerat facilis obcaecati
+        minima? Sit
+        aspernatur sunt consequatur labore sequi ratione expedita possimus minus quos quam doloribus accusantium aliquam
+        natus omnis mollitia laboriosam, fugiat explicabo in dolorum iste exercitationem esse molestiae deleniti. Et
+        dolore odit possimus enim, eaque sint adipisci!
+    </p>
+
+    <button id="btn_ubah_title">Ubah warna title</button>
+    <button id="btn_ubah_description">Ubah warna deskripsi</button>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+
+    <script>
+        const ubah = document.getElementById('demo');
+        const btnUbah = document.getElementById('btn-ubah');
+
+        const lampu = document.getElementById('lampu');
+        const btn_on = document.getElementById('btn_on');
+        const btn_off = document.getElementById('btn_off');
+
+        // Ubah font
+        const heading_1 = document.querySelector('.title');
+        const deskripsi = document.querySelector('.description');
+        const btnUbahTitle = document.getElementById('btn_ubah_title');
+        const btnUbahDeskripsi = document.getElementById('btn_ubah_description');
+        const btnHide = document.getElementById('hide');
+        const btnShow = document.getElementById('show');
+
+        btnUbah.addEventListener('click', function () {
+            ubah.innerText = `Oke sudah dirubah hehe`
+        })
+
+        btn_on.addEventListener('click', function () {
+            lampu.src = "OnP.jpeg";
+        })
+
+        btn_off.addEventListener('click', function () {
+            lampu.src = "Off.jpeg";
+        })
+
+        btnUbahTitle.addEventListener('click', function () {
+            heading_1.style.color = "red"
+        })
+
+        btnUbahDeskripsi.addEventListener('click', function () {
+            deskripsi.style.color = "green"
+        })
+
+        btnHide.addEventListener('click', function () {
+            deskripsi.style.display = 'none'
+        })
+
+        btnShow.addEventListener('click', function () {
+            deskripsi.style.display = 'block'
+        })
+
+
+
+    </script>
+</body>
+
+</html>
