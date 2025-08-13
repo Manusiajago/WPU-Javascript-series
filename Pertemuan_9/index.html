@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan_10</title>
+</head>
+
+<body>
+    <h1>Selamat datang di pertemuan 10</h1>
+
+    <ul id="listHewan"></ul>
+
+
+
+    <script>
+        //object
+        // Car Properties	Car Methods
+        // car.name = Fiat
+
+        // car.model = 500
+
+        // car.weight = 850kg
+
+        // car.color = white	car.start()
+
+        // car.drive()
+
+        // car.brake()
+
+        // car.stop()
+
+        const mobil = {
+            nama: 'Fiat',
+            model: 500,
+            berat: 850,
+            warna: 'putih',
+        }
+
+        console.log(mobil)
+
+        //definisi object pada javaScript
+
+        // contoh membuat object dengan 4 properti
+        const Mahasiswa = {
+            nama: 'Egal Assegaf',
+            jenisKelamin: 'Laki-laki',
+            alamat: 'JL. Cempaka',
+            umur: 24,
+            status: 'Mahasiswa'
+        }
+
+        console.table(Mahasiswa);
+
+        //Create an empty JavaScript object and add 4 properties:
+        const Kendaraan = {}
+
+        Kendaraan.jenis = 'Motor';
+        Kendaraan.warna = 'Hitam';
+        Kendaraan.merek = 'beat';
+        Kendaraan.kecepatan = 250;
+
+        console.table(Kendaraan)
+
+        //Using the new Keyword
+        const hewan = new Object({
+            jenis: 'Kucing',
+            warna: 'Hitam',
+            umur: 2,
+        });
+
+        //ambil ul
+        const listHewan = document.getElementById('listHewan')
+
+        //loop setiap property object
+        for (let key in hewan) {
+            if (hewan.hasOwnProperty(key)) {
+                // buat elemen li
+                const li = document.createElement('li');
+
+                li.textContent = `${key}: ${hewan[key]}`
+                listHewan.appendChild(li);
+            }
+        }
+
+        const handphone = {
+            merek: 'Samsung',
+            model: 'A12',
+            warna: 'Hitam',
+            harga: 3000000
+        }
+
+        console.log(handphone['merek'])
+
+        //method di dalam object
+        // method adalah tindakan yg dapat dilakukan di dalam object
+
+        const burung = {
+            nama: 'Kicau',
+            warna: 'Hitam',
+            suara: function () {
+                return `nama burung ${this.nama} warna burung ${this.warna}`
+            }
+        }
+
+        console.table(burung)
+        console.log(burung.suara())
+
+
+
+
+
+    </script>
+</body>
+
+</html>
