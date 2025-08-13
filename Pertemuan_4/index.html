@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4</title>
+</head>
+
+<body>
+    <h1>Cetak nama kamu</h1>
+    <p id="name"></p>
+
+    <button id="btn_print">Cetak</button>
+
+
+    <script>
+
+        const p = document.getElementById('name');
+        const name = `Halo nama saya Egal Assegaf`
+        const btnPrint = document.getElementById('btn_print');
+
+        btnPrint.addEventListener('click', function () {
+            p.textContent = name;
+        })
+        // membuat variabel
+        x = 10
+        y = 20
+        z = x + y;
+
+        // menggunakan var
+        var angka_1 = 25;
+        var angka_2 = 40;
+        var jumlah_1 = angka_1 + angka_1;
+
+        console.log(jumlah_1)
+        console.log(z)
+
+        // menggunakan let
+        let angka_3 = 24;
+        let angka_4 = 25;
+        let jumlah_2 = angka_3 * angka_4;
+
+        console.log('Ini adalah isi: ', jumlah_2)
+
+        // menggunakan const 
+        const umurSaya = 24;
+        const namaSaya = 'Rizky';
+        const cetakIdentitas = umurSaya + namaSaya;
+        console.log(cetakIdentitas)
+
+        //mixed 
+        const harga1 = 25;
+        const harga2 = 30;
+
+        let totalHarga = harga1 + harga2;
+        console.log(totalHarga)
+
+        function showResult(totalHarga) {
+            document.write(totalHarga)
+        }
+
+        showResult(totalHarga)
+    </script>
+</body>
+
+</html>
