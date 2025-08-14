@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 12</title>
+</head>
+
+<body>
+    <h1>selamat datang di pertemuan 12</h1>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <ul id="listHewan"></ul>
+
+    <br>
+
+    <p id="demo3"></p>
+    <br>
+    <p id="demo4"></p>
+
+
+
+
+
+
+    <script>
+        // menampilkan object
+
+        //buat object
+        const person1 = {
+            nama: 'Egal',
+            umur: 24,
+            jurusan: 'Teknik Informatika'
+        }
+
+        const person2 = {
+            nama: 'adel',
+            umur: 24,
+            jurusan: 'Ilmu Komunikasi'
+        }
+
+
+        // menampilkan object ke HTML
+        document.getElementById('demo').textContent = `halo nama saya ${person1.nama} umur saya ${person1.umur}`
+
+        // menggunakan loop
+        let resultText = '';
+        for (let key in person2) {
+            resultText += person2[key] + '';
+        }
+
+        document.getElementById('demo2').innerHTML = resultText;
+
+        // obejct
+        const hewan = {
+            nama: 'singa',
+            jenis: 'hewan',
+            warna: 'hitam',
+            namaLengkap: 'singa hitam',
+            berat: 1000
+        }
+
+        const listHewan = document.getElementById('listHewan')
+
+        for (let key in hewan) {
+            if (hewan.hasOwnProperty(key)) {
+                // buat elemen
+                const li = document.createElement('li');
+                li.textContent = `${key} ${hewan[key]}`
+                listHewan.appendChild(li)
+            }
+        }
+
+        // menggunakan object values
+        const hewan2 = {
+            nama: 'burung',
+            jenis: 'hewan',
+            warna: 'abu-abu',
+            namaLengkap: 'burung abu-abu',
+            berat: 10
+        }
+
+        const myArray = Object.values(hewan2)
+
+        document.getElementById('demo3').innerText = myArray;
+        console.log(myArray
+        )
+
+
+        //menggunakan JSON.stringify()
+        const person3 = {
+            nama: 'Citra',
+            umur: 26,
+            alamat: 'Jl. Raya No. 1',
+            pekerjaan: 'Pegawai Negeri Sipil'
+        }
+
+        const myString = JSON.stringify(person3)
+        console.log(myString)
+        document.getElementById('demo4').textContent = myString;
+
+
+
+
+    </script>
+</body>
+
+</html>
