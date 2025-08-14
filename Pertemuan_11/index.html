@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan_ 11</title>
+</head>
+<h1>Selamat datang di pertemuan 11</h1>
+
+<p id="demo"></p>
+
+
+
+
+
+
+<script>
+    //contoh method() pada object
+    const person1 = {
+        nama: 'Egal Assegaf',
+        hobi: 'Coding',
+        pekerjaan: 'Coding Instructor',
+        umur: 24,
+        cetak: function () {
+            return `Halo nama saya ${this.nama} hobi saya ${this.hobi} pekerjaan saya ${this.pekerjaan}`
+        }
+    }
+
+
+    console.log(person1.cetak())
+    document.getElementById('demo').textContent = `Halo perkenalkan ${person1.cetak()}`
+
+    // menambahkan method object ke person 1
+    person1.aktivitas = function () {
+        return `pekerjaan saya ${this.pekerjaan}`
+    }
+
+    console.table(person1)
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
