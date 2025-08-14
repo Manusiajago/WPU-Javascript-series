@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 10</title>
+</head>
+
+<body>
+    <h1>Mahasiswa</h1>
+    <br>
+    <ul id="mahasiswa"></ul>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+
+    <script>
+        const Mahasiswa = {
+            nama: "Rizki",
+            umur: 20,
+            jurusan: 'Teknik Informatika',
+            alamat: 'Jl. Raya Jakarta',
+            hobi: 'Coding',
+            aktivitas: function () {
+                return `Halo saya suka ${this.hobi} dan usia saya sekarang ${this.umur}`
+            }
+        }
+
+        //akses object
+        let umur = Mahasiswa.umur;
+        let nama = Mahasiswa['nama'];
+        let mhs = Mahasiswa.nama + " dan umur saya " + Mahasiswa.umur + " Tahun ";
+
+        //menambahkan ke object
+        Mahasiswa.bahasa = "Indonesia"
+
+
+        console.log(umur)
+        console.log(nama)
+        console.log(mhs)
+        console.table(Mahasiswa)
+
+        //tampilkan ke html
+        const listMahasiswa = document.getElementById('mahasiswa');
+
+        for (let key in Mahasiswa) {
+            if (Mahasiswa.hasOwnProperty(key)) {
+                // membuat elemen li
+                const li = document.createElement('li');
+
+                li.textContent = `${key} ${Mahasiswa[key]}`
+                listMahasiswa.appendChild(li)
+            }
+        }
+
+
+        //constructor function
+        function Person(namaAwal, namaAkhir, umur, pekerjaan) {
+            this.namaAwal = namaAwal;
+            this.namaAkhir = namaAkhir;
+            this.umur = umur
+            this.pekerjaan = pekerjaan;
+        }
+
+        //delete objext properti
+        //example
+        const karyawan = {
+            nama: 'Hendi',
+            umur: 27,
+            pekerjaan: 'Karyawan',
+            gaji: 5000000,
+            kendaraan: 'motor'
+        }
+
+        // delete properti
+        delete karyawan.kendaraan;
+        delete karyawan['pekerjaan'];
+        console.table(karyawan)
+
+        //membuat 2 object
+        const person1 = new Person('Adelia', 'Syhanda', 24, 'Content Writer')
+
+        // tampilkan ke HTML
+        document.getElementById('demo').textContent = `Halo nama saya ${person1.namaAwal} umur saya ${person1.umur}`
+
+        // nested object
+        const identitasSaya = {
+            nama: 'Egal Assegaf',
+            umur: 24,
+            pekerjaan: 'Coding Instructor',
+            crypto: {
+                bitcoin: 0.000000091,
+                solana: 2,
+                eth: 2,
+                sui: 100
+            }
+        }
+
+        console.table(identitasSaya)
+
+        //You can access nested objects using the dot notation or the bracket notation:
+        document.getElementById('demo2').textContent = `nama saya ${identitasSaya.nama} tabungan solana saya ${identitasSaya.crypto.solana} Solana`
+
+
+
+    </script>
+</body>
+
+</html>
