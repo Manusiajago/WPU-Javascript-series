@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan_16</title>
+
+    <!-- STyle -->
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            margin: 50px auto;
+
+
+
+            background-color: #eaeaea;
+            border: 2px solid black;
+            box-shadow: 7px 6px 26px -1px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 7px 6px 26px -1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 7px 6px 26px -1px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+
+        .container-list {
+            margin: 5rem auto;
+            border: 2px solid black;
+            padding: 1rem;
+
+        }
+
+        .container:hover {
+            transform: translate(0px, -15px);
+        }
+
+        .title-h2 {
+            text-align: center;
+            color: black;
+        }
+
+
+        button {
+            display: block;
+        }
+
+        .btn1 {
+            width: 100px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+
+            background-color: green;
+            color: white;
+        }
+
+        .btn2 {
+            width: 100px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+
+            background-color: red;
+            color: white;
+        }
+
+        .btn3 {
+            width: 100px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+
+            background-color: rgb(188, 188, 3);
+            color: white;
+        }
+
+        .container-btn {
+
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Daftar Mahasiswa R1</h1>
+
+    <div class="container">
+        <h2 class="title-h2">Daftar Mahasiswa</h2>
+
+        <div class="container-list">
+            <h3>Berikut adalah Daftar Mahasiswa:</h3>
+            <ul id="daftar">
+
+            </ul>
+        </div>
+
+        <div class="container-btn">
+            <button class="btn1">Tambah data</button>
+            <button class="btn2">Hapus data</button>
+            <button class="btn3">Edit data</button>
+        </div>
+
+    </div>
+
+
+    <!-- Daftar hewan -->
+    <ul id="daftarHewan"></ul>
+
+
+    <script>
+        const daftar = document.getElementById('daftar');
+        const daftarHewan = document.getElementById('daftarHewan');
+
+
+        const myAnimalWild = ['macan', 'harimau', 'singa', 'gajah', 'ular']
+        myAnimalWild.push('ayam')
+
+
+
+        for (let i = 0; i < myAnimalWild.length; i++) {
+            const li = document.createElement('li');
+            li.textContent = myAnimalWild[i];
+
+            daftarHewan.appendChild(li)
+
+        }
+
+
+
+        //menambahkan array elemen
+
+
+
+        // array & cara membuatnya
+        // example
+
+        const myArr = ['kambing', 'kerbau', 'sapi', 'ular', 'ayam'];
+        console.log(myArr);
+
+
+        //cara membuat array dari array kosong
+        const kendaraan = []
+
+        kendaraan[0] = 'mobil'
+        kendaraan[1] = 'helikopter'
+        kendaraan[2] = 'pesawat'
+
+        console.log(kendaraan);
+
+        //menggunakan keywoard new
+        const hewan = new Array('sapi', 'kambing', 'keledai', 'ular')
+
+        console.log(hewan)
+
+        // mengakses elemen array
+        const mahasiswa = ['andi', 'budi', 'bejo', 'gita', 'egal', 'juni']
+
+
+
+
+        mahasiswa.forEach((nama) => {
+            const li = document.createElement('li')
+            li.textContent = nama
+            daftar.appendChild(li);
+        })
+
+        console.table(mahasiswa)
+        console.log(mahasiswa[0]);
+
+        let bejo = mahasiswa[2];
+        console.log(bejo)
+
+        //mengubah elemen array
+        const dataWargaRt06 = ['adel', 'arga', 'bila', 'rama', 'salsa'];
+
+        dataWargaRt06[0] = 'bigmo';
+        dataWargaRt06[1] = 'timoty';
+
+        console.log(dataWargaRt06)
+
+        //mengkonversi array ke string
+        const dataMahasiswaR1 = ['jihan', 'marc', 'fantri', 'akmal']
+        let konversi = dataMahasiswaR1.toString()
+
+        console.log(konversi)
+
+        //mengakses elemen terakhir array
+        const cekElemenTerakhir = dataMahasiswaR1.length;
+        dataTerakhir = dataMahasiswaR1[dataMahasiswaR1.length - 1];
+
+        console.log(dataTerakhir)
+        console.log(cekElemenTerakhir)
+
+
+    </script>
+</body>
+
+</html>
