@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 17 </title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <p id="demo2"></p>
+
+
+    <script>
+        // // contoh penggunaan if else
+        // const now = new Date();
+        // const time = now.getHours();
+        // const demo = document.getElementById('demo');
+
+        // console.log(time)
+
+        // if (time < 18) {
+        //     demo.textContent = `Selamat Pagi`
+        // } else {
+        //     demo.textContent = `Selamat Malam`
+        // }
+
+        // // membuat program nilai siswa
+        // const namaKamu = prompt("Masukkan nama kamu")
+        // const inputNilai = prompt("Masukkan Nilai anda ");
+
+        // if (inputNilai >= 90) {
+        //     alert(`Halo ${namaKamu} kamu mendapat grade A`)
+        // } else if (inputNilai >= 80) {
+        //     alert(`Halo ${namaKamu} kamu mendapat grade B`)
+        // } else if (inputNilai >= 70) {
+        //     alert(`Halo ${namaKamu} kamu mendapat grade C`)
+        // } else if (inputNilai >= 60) {
+        //     alert(`Halo ${namaKamu} kamu mendapat grade C`)
+        // } else {
+        //     alert(`Halo ${namaKamu} kamu mendapat grade E`)
+        // }
+
+
+        // cek bilangan positif dan negatif
+        const nilaiInput = Number(prompt("Masukkan bilangan/angka: "));
+
+        if (nilaiInput > 0) {
+            alert(`Bilangan tersebut positif`)
+        } else if (nilaiInput < 0) {
+            alert(`Bilangan tersebut negatif`)
+        } else if (nilaiInput == 0) {
+            alert(`Bilangan tersebut nol`)
+        } else {
+            alert(`Masukkan angka`)
+        }
+
+        // cek bilangan ganjil genap
+        const demo = document.getElementById('demo')
+        const demo2 = document.getElementById('demo2')
+        const cekBilangan = 90;
+
+        if (cekBilangan % 2 == 0) {
+            demo.textContent = `Bilangan tersebut genap`
+        } else {
+            demo.textContent = `Bilangan tersebut ganjil`
+        }
+
+        // cek umur untuk SIM 
+        const cekUmur = 19;
+
+        if (cekUmur < 17) {
+            demo2.textContent = `Anda belum bisa mengemudi`
+        } else {
+            demo2.textContent = `Anda sudah bisa mengemudi`
+        }
+
+        // cek password
+        const password = Number(prompt("Masukkan Password: "))
+
+        if (password === 12345) {
+            alert("Login berhasil")
+        } else {
+            alert("Login gagal")
+        }
+
+        //diskon belanja
+
+
+
+    </script>
+</body>
+
+</html>
