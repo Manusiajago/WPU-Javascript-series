@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan_18</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        //contoh hari dalam seminggu
+        // const hari = prompt("Masukkan hari (1-7) hari")
+        // switch (Number(hari)) {
+        //     case 1:
+        //         // blok eksekusi
+        //         alert('Hari senin');
+        //         break;
+        //     case 2:
+        //         alert('Hari selasa');
+        //         break;
+        //     case 3:
+        //         alert('Hari rabu');
+        //         break;
+        //     case 4:
+        //         alert('hari kamis');
+        //         break;
+        //     case 5:
+        //         alert('hari jumat');
+        //         break;
+        //     case 6:
+        //         alert('hari sabtu');
+        //         break;
+        //     case 7:
+        //         alert('hari minggu');
+        //         break;
+        //     default:
+        //         alert('Masukkan angka yg cocok')
+        // }
+
+        //kalkulator sederhana
+        const angka1 = Number(prompt("Masukkan angka pertama: "));
+        const angka2 = Number(prompt("Masukkan angka ke 2: "));
+        const operator = prompt("Masukkan operator (+ , - , * , /)");
+        let result;
+
+        switch (operator) {
+            case "+":
+                result = angka1 + angka2;
+                break;
+            case "-":
+                result = angka1 - angka2;
+                break;
+            case "*":
+                result = angka1 * angka2;
+                break;
+            case "/":
+                result = angka1 / angka2;
+                break;
+            default:
+                result = "Operator tidak valid"
+        }
+
+        alert("Hasilnya: " + result);
+
+
+
+
+    </script>
+</body>
+
+</html>
