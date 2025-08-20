@@ -9,20 +9,134 @@
 
 <body>
     <p id="demo"></p>
+    <p id="demo2"></P>
+
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <p id="demo5"></p>
 
 
 
     <script>
         // contoh looping
         const demo = document.getElementById('demo')
-        const myArray = ['Adel', 'arga', 'rama', 'salsa', 'bila'];
+        const demo2 = document.querySelector('#demo2');
+        const demo3 = document.getElementById('demo3')
 
+
+
+
+        // const siswa = ['catur', 'rizki', 'abay', 'okta', 'albi'];
+
+        // let text2 = "";
+        // for (let y = 0; y < siswa.length; y++) {
+        //     text2 += siswa[y] + "<br>";
+        // }
+
+        // demo2.innerHTML = text2;
+
+
+
+        // const passwordBenar = "egal1234";
+        // let percobaan = 0;
+        // let inputUser = "";  // pakai let biar bisa diubah
+
+        // while (inputUser !== passwordBenar && percobaan < 3) {
+        //     inputUser = prompt("Masukkan password:"); // minta input dari user
+        //     if (inputUser !== passwordBenar) {
+        //         console.log("Password salah, mohon ulangi.");
+        //     }
+        //     percobaan++;
+        // }
+
+        // if (inputUser === passwordBenar) {
+        //     console.log("Anda berhasil masuk");
+        // } else {
+        //     console.log("Anda gagal masuk");
+        // }
+
+
+        // menggunakan do while
+        let i = 0;
         let text = '';
-        for (let i = 0; i < myArray.length; i++) {
-            text += myArray[i] + "<br>";
+
+
+        do {
+            text += "<br> Ini angka ke " + i;
+            i++;
+        }
+        while (i < 10);
+
+        demo3.innerHTML = text;
+
+
+        // menggunakan for in
+        const demo4 = document.getElementById('demo4')
+
+        const mahasiswa = {
+            namaAwal: 'Egal',
+            namaAkhir: 'Assegaf',
+            jurusan: 'teknik informatika',
+            jenisKel: 'laki laki'
         }
 
-        demo.innerHTML = text;
+
+        let txt = "";
+        for (item in mahasiswa) {
+            txt += mahasiswa[item]
+        }
+
+        demo4.innerHTML = txt;
+
+        const identitasSaya = {
+            nama: 'Egal Assegaf',
+            jenisKel: 'Laki laki',
+            jurusan: 'Teknik Informatika',
+            namaKampus: 'Unindra',
+            umur: 24
+        }
+
+        const demo5 = document.getElementById('demo5');
+
+
+        let message = ``;
+        //loop dengan for in
+        for (key in identitasSaya) {
+            message += `${key} ${identitasSaya[key]} <br>`;
+        }
+
+        demo5.innerHTML = message;
+
+
+        // soal loop menggunakan for in
+        const mobil = {
+            merk: 'BMW',
+            tahun: '2025',
+            warna: 'Hitam'
+        }
+
+        let mobilOutput = '';
+        for (item in mobil) {
+            mobilOutput += `${item}: ${mobil[item]} \n`
+        }
+
+        console.log(mobilOutput);
+
+        let num = 0;
+        const myAngka = [2, 4, 6, 8, 10];
+
+
+        myAngka.forEach((value, index) => {
+
+
+            num += value;
+        })
+
+
+        console.log(num)
+
+
 
 
 

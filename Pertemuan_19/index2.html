@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module </title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+
+
+
+    <script type="module">
+        // import named exports
+        import { myName, myAge } from "./person.js"
+        //import default export
+        import message from "./message.js"
+
+        const demo = document.getElementById('demo')
+        demo.textContent = `Halo nama saya ${myName} , umur saya ${myAge}`
+
+
+
+        const demo2 = document.getElementById('demo2');
+        demo2.innerHTML = message();
+
+
+
+
+
+    </script>
+</body>
+
+</html>
