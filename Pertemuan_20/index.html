@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // mencari angka genap
+        const numbers = [3, 6, 8, 11, 14, 17, 20];
+        const fruits = ["apel", "jeruk", "mangga", "pisang"];
+        const nilai = [78, 85, 90, 67, 92, 88];
+        const produk = ['laptop', 'kulkas', 'mesincuci', 'vakum']
+
+
+        //menggunakan foreach
+        produk.forEach((item, index) => {
+            console.log(`${index + 1}. ${item}`)
+        })
+
+        for (let i = 0; i < fruits.length; i++) {
+            console.log(`${i + 1}. ${fruits[i]}`)
+        }
+
+        // mencari nilai terbesar
+        let max = Math.max.apply(null, nilai);
+        console.log(`Nilai terbesar dari ${nilai} adalah ${max}`)
+
+
+        //menggunakan for
+        // for (let i = 0; i < numbers.length; i++) {
+        //     if (numbers[i] % 2 == 0) {
+        //         console.log(numbers[i])
+        //     }
+        // }
+
+        // menggunakan while
+        // let i = 0
+        // while (i < numbers.length) {
+        //     if (numbers[i] % 2 == 0) {
+        //         console.log(`bilangan ini genap ${numbers[i]}`)
+        //     }
+
+        //     i++
+        // }
+
+        // menggunakan for of
+        // for (let x of numbers) {
+        //     if (x % 2 == 0) {
+        //         console.log(`bilangan ini genap ${numbers[x]}`)
+        //     }
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>
