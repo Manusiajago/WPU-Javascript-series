@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        // mengetahui saldo akhir
+        // let inputSaldoAwal = Number(prompt("Masukkan saldo awal anda:  "));
+        // let inputTotalJajan = Number(prompt("Masukkan total belanja anda"));
+
+        // let hasil = inputSaldoAwal - inputTotalJajan;
+
+        // alert(`sisa saldo anda sekarang ${hasil}`)
+
+        let hari = new Date().getDay()
+        console.log(hari)
+
+        switch (hari) {
+            case 0:
+                day = 'senin'
+                break
+            case 1:
+                day = 'selasa'
+                break
+            case 3:
+                day = 'rabu'
+                break
+            case 4:
+                day = 'kamis'
+                break
+            case 5:
+                day = 'jumat'
+                break
+            case 6:
+                day = 'sabtu'
+                break
+            case 7:
+                day = 'minggu'
+                break
+            default:
+                console.log("Masukkin hari yg tepat")
+        }
+
+        console.log(`Sekarang hari ${day}`)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
