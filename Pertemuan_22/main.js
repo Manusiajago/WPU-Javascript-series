@@ -1,4 +1,4 @@
-// belajar array & method di dalam array
+// belajar array 
 const myArray = ['adel' , 'arga' , 'salsa' , 'rama' , 'egal'];
 
 // cara memasukkan ke dalam array
