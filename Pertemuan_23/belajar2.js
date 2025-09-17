@@ -8,6 +8,6 @@ function operasiTambah(sum1, sum2, tampilkanPesan) {
     tampilkanPesan(hasil)
 }
 
-
 operasiTambah(10, 10, tampilkanPesan)
+
 
